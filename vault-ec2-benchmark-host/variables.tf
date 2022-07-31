@@ -1,0 +1,31 @@
+variable "subnet_id" {
+  type        = string
+  description = "The subnet ID to create EC2 clients in"
+}
+
+variable "allowed_ssh_cidr_blocks" {
+  description = "A list of CIDR-formatted IP address ranges from which the EC2 Instances will allow SSH connections"
+  type        = list(string)
+  default     = []
+}
+
+variable "allowed_http_cidr_blocks" {
+  description = "A list of CIDR-formatted IP address ranges from which the EC2 Instances will allow connections over 8080"
+  type        = list(string)
+  default     = []
+}
+
+variable "client_config_file" {
+  type        = string
+  description = "The client config file provided by HCP"
+}
+
+variable "security_group_id" {
+  type = string
+}
+
+variable "vpc_cidr" {
+  type        = string
+  description = "VPC CIDR"
+  default     = "10.0.0.0/8"
+}
